@@ -70,9 +70,13 @@ export default {
       // 吧一位数组变成二维
       this.iconList.forEach((item, index) => {
         const page = Math.floor(index / 8)
+        // console.log("index:", index)
+        // console.log("index / 8:", index / 8)
+        // console.log("page:", page)
         if (!pages[page]) {
           pages[page] = []
         }
+        // console.log('pages[page]:', pages[page])
         pages[page].push(item)
       })
       return pages
