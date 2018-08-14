@@ -16,59 +16,21 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    icon: Array
+  },
   data () {
     return {
       swiperOption: {
         autoplay: false
-      },
-      iconList: [{
-        id: '001',
-        imgUrl: 'https://imgs.qunarzz.com/sight/p0/1508/db/dbd0bef45fbc36b3.img.jpg_256x160_073f03de.jpg',
-        desc: '景点门票'
-      }, {
-        id: '002',
-        imgUrl: 'https://imgs.qunarzz.com/sight/p0/1508/db/dbd0bef45fbc36b3.img.jpg_256x160_073f03de.jpg',
-        desc: '景点门票'
-      }, {
-        id: '003',
-        imgUrl: 'https://imgs.qunarzz.com/sight/p0/1508/db/dbd0bef45fbc36b3.img.jpg_256x160_073f03de.jpg',
-        desc: '景点门票'
-      }, {
-        id: '004',
-        imgUrl: 'https://imgs.qunarzz.com/sight/p0/1508/db/dbd0bef45fbc36b3.img.jpg_256x160_073f03de.jpg',
-        desc: '景点门票'
-      }, {
-        id: '005',
-        imgUrl: 'https://imgs.qunarzz.com/sight/p0/1508/db/dbd0bef45fbc36b3.img.jpg_256x160_073f03de.jpg',
-        desc: '景点门票'
-      }, {
-        id: '006',
-        imgUrl: 'https://imgs.qunarzz.com/sight/p0/1508/db/dbd0bef45fbc36b3.img.jpg_256x160_073f03de.jpg',
-        desc: '景点门票'
-      }, {
-        id: '007',
-        imgUrl: 'https://imgs.qunarzz.com/sight/p0/1508/db/dbd0bef45fbc36b3.img.jpg_256x160_073f03de.jpg',
-        desc: '景点门票'
-      }, {
-        id: '008',
-        imgUrl: 'https://imgs.qunarzz.com/sight/p0/1508/db/dbd0bef45fbc36b3.img.jpg_256x160_073f03de.jpg',
-        desc: '景点门票'
-      }, {
-        id: '009',
-        imgUrl: 'https://imgs.qunarzz.com/sight/p0/1508/db/dbd0bef45fbc36b3.img.jpg_256x160_073f03de.jpg',
-        desc: '景点门票'
-      }, {
-        id: '010',
-        imgUrl: 'https://imgs.qunarzz.com/sight/p0/1508/db/dbd0bef45fbc36b3.img.jpg_256x160_073f03de.jpg',
-        desc: '景点门票'
-      }]
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
       // 吧一位数组变成二维
-      this.iconList.forEach((item, index) => {
+      this.icon.forEach((item, index) => {
         const page = Math.floor(index / 8)
         // console.log("index:", index)
         // console.log("index / 8:", index / 8)
