@@ -12,12 +12,12 @@ export default new Vuex.Store({
   //     ctx.commit('changeCity', city)
   //   }
   // },
-  mutations: mutations,
+  mutations: mutations
   // getters类似于computed，在需要根据state计算一些属性的时候
-  getters: {
-    doubleCity (state) {
-      return state.city + ' ' + state.city
-    }
-  }
+  // getters: {
+  //   doubleCity (state) {
+  //     return state.city + ' ' + state.city
+  //   }
+  // }
 
 })
