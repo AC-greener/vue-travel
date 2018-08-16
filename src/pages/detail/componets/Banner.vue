@@ -1,35 +1,44 @@
 <template>
   <div>
     <div class="banner" @click="handleBannerCilck">
-      <img class="banner-img" src="http://www.runoob.com/wp-content/uploads/2016/02/react.png" alt="">
+      <img class="banner-img" :src="bannerImg" alt="">
       <div class="banner-info">
         <div class="banner-title">
-          大连圣亚海洋世界
+          {{this.sightName}}
         </div>
         <div class="banner-number">
-          <span class="iconfont banner-icon">&#xe692;</span>39
+          <span class="iconfont banner-icon">&#xe692;</span>
+          {{this.gallaryImgs.length}}
         </div>
       </div>
     </div>
-    <common-gallary
-      :imgs='imgs'
-      v-show="isShowGallary"
-      @close='handleGallaryClose'
-    ></common-gallary>
+    <fade-animation>
+      <common-gallary
+        :imgs='gallaryImgs'
+        v-show="isShowGallary"
+        @close='handleGallaryClose'
+      ></common-gallary>
+    </fade-animation>
   </div>
 </template>
 
 <script>
 import CommonGallary from 'common/gallary/Gallary'
+import FadeAnimation from 'common/fade/FadeAnimation'
 export default {
   name: 'DetailBanner',
   components: {
-    CommonGallary
+    CommonGallary,
+    FadeAnimation
+  },
+  props: {
+    sightName: String,
+    bannerImg: String,
+    gallaryImgs: Array
   },
   data () {
     return {
-      isShowGallary: false,
-      imgs: ['http://www.runoob.com/wp-content/uploads/2016/02/react.png', 'http://www.runoob.com/wp-content/uploads/2016/02/react.png']
+      isShowGallary: false
     }
   },
   methods: {
@@ -65,6 +74,8 @@ export default {
         font-size: .32rem
         padding: 0 .2rem
       .banner-number
+        position: absolute
+        right: .5rem
         height: .32rem
         line-height: .32rem
         margin-top: .14rem
@@ -73,5 +84,5 @@ export default {
         background: rgba(0, 0, 0, .8)
         font-size: .24rem
         .banner-icon
-          font-size: .24rem
+          // font-size: .24rem
 </style>
